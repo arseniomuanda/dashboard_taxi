@@ -29,47 +29,11 @@
             </div>
         </div>
         <div style="font-size: 15px" class="portlet-body">
-            <a href="/configuracao" class="">
-                <span class="text-danger m-1">0.1</span>Perfil do Edifício
-            </a>
-            <hr style=" margin-top: 8px; margin-bottom: 8px; ">
-            <a href="/configuracao/loja" class="">
-                <span class="text-danger m-1">0.3</span>Lojas
-            </a>
-            <hr style=" margin-top: 8px; margin-bottom: 8px; ">
-            <a href="/configuracao/tipologia" class="">
-                <span class="text-danger m-1">0.2</span>Tipologias
-            </a>
-            <hr style=" margin-top: 8px; margin-bottom: 8px; ">
-            <a href="/configuracao/tipo_espaco" class="">
-                <span class="text-danger m-1">0.4</span>Tipo de Espaço
-            </a>
-            <hr style=" margin-top: 8px; margin-bottom: 8px; ">
-            <a href="/configuracao/tipo_receita" class="">
-                <span class="text-danger m-1">0.5</span>Tipos de Receita
-            </a>
-            <hr style=" margin-top: 8px; margin-bottom: 8px; ">
-            <a href="/configuracao/tipo_despesa" class="">
-                <span class="text-danger m-1">0.6</span>Tipos de Despesa
-            </a>
-            <hr style=" margin-top: 8px; margin-bottom: 8px; ">
-            <a href="/configuracao/taxa" class="">
-                <span class="text-danger m-1">0.7</span>Taxas
-            </a>
-            <hr style="margin-top: 8px; margin-bottom: 8px; ">
-            <a href="#" class="text-dark">
-                <span class="text-danger m-1">0.8</span>Países
-            </a>
-            <hr style=" margin-top: 8px; margin-bottom: 8px; ">
-            <a href="/configuracao/ano" class="">
-                <span class="text-danger m-1">0.9</span>Ano
-            </a>
-            <hr style=" margin-top: 8px; margin-bottom: 8px; ">
-            <a href="/configuracao/acesso" class="">
+            <a href="/config/acesso" class="">
                 <span class="text-danger m-1">0.10</span>Acessos
             </a>
             <hr style=" margin-top: 8px; margin-bottom: 8px; ">
-            <a href="/configuracao/utilizador" class="">
+            <a href="/config/utilizador" class="">
                 <span class="text-danger m-1">0.11</span>Utilizadores
             </a>
         </div>
@@ -79,3 +43,72 @@
 </div>
 </div>
 </div>
+
+<script>
+    const configVue = new Vue({
+        el: '#app',
+        data() {
+            return {
+                users: []
+            }
+        },
+        methods: {
+            getUsers: async function() {
+                const options = {
+                    method: 'GET',
+                    headers: {
+                        /* 'User-Agent': 'insomnia/2023.5.8', */
+                        Authorization: 'Bearer ' + sessionStorage.token
+                    }
+                };
+
+                await fetch(endpoins.api + endpoins.users, options)
+                    .then(response => response.json())
+                    .then(response => {
+                        try {
+                            this.users = response.data;
+                            console.log(response);
+                        } catch (error) {
+                            drivers: []
+                        }
+                    })
+                    .catch(err => console.error(err));
+            },
+
+            addAdmin: async function(form) {
+                var object = {};
+                new FormData(form).forEach(function(value, key) {
+                    object[key] = value;
+                });
+                var json = JSON.stringify(object);
+
+                const options = {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        /* 'User-Agent': 'insomnia/2023.5.8' */
+                    },
+                    body: json
+                };
+
+                fetch(endpoins.api + '/admin/register', options)
+                    .then(response => response.json())
+                    .then(response => {
+                        location.reload()
+                    })
+                    .catch(err => console.error(err));
+            },
+        },
+        mounted() {
+            this.getUsers();
+        },
+        beforeMount() {},
+        beforeDestroy() {
+            alert("Sessão incerrada por falha na autenticação!");
+        },
+        destroyed() {
+            sessionStorage.clear();
+            location.reload();
+        },
+    })
+</script>

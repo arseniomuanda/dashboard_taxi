@@ -4,7 +4,7 @@
 					<img src="/assets/images/logo-icon.png" class="logo-icon" alt="logo icon">
 				</div>
 				<div>
-					<h4 class="logo-text">Rocker</h4>
+					<h4 class="logo-text">Bazza Comigo</h4>
 				</div>
 				<div class="toggle-icon ms-auto"><i class='bx bx-arrow-to-left'></i>
 				</div>
@@ -26,12 +26,11 @@
 						<div class="menu-title">Menu Principal</div>
 					</a>
 					<ul style="background-color: #d8d7adee;">
-						<li> <a href="/vehicles"><i class="bx bx-building-house"></i>Viaturas Registadas</a>
-						</li>
+						<li> <a href="/drivers"><i class="bx bx-building-house"></i>Novos Motoriastas</a></li>
 						<li> <a href="/vehicles/news"><i class="bx bxs-user-plus"></i>Novas Viaturas</a>
 						</li>
 						<li>
-							<a href="/drivers"><i class='bx bx-briefcase'></i>Motoristas
+							<a href="/drivers/"><i class='bx bx-briefcase'></i>Motoristas
 							</a>
 						</li>
 					</ul>
@@ -142,8 +141,8 @@
 							<img src="/assets/images/avatars/avatar-2.png" class="user-img" alt="user
 											avatar">
 							<div class="user-info ps-3">
-								<p class="user-name mb-0">Antônio Viegas</p>
-								<p class="designattion mb-0">Administrador Geral</p>
+								<p class="user-name mb-0" id="user-name"></p>
+								<p class="designattion mb-0" id="user-role">Admin</p>
 							</div>
 						</a>
 						<ul class="dropdown-menu dropdown-menu-end" style="background-color: #d8d7adee;">

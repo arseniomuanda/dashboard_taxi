@@ -9,15 +9,19 @@ $routes->get('/', 'Home::index');
 
 $routes->get('login', 'Login::index');
 
-$routes->group("vehicles", function ($routes) {
-    $routes->get('/', 'Vehicle::index');
-    $routes->get('news', 'Vehicle::news');
-    $routes->get('(:num)', 'Vehicle::profile/$1');
+$routes->group("drivers", function ($routes) {
+    $routes->get('/', 'Driver::index');
+    $routes->get('news', 'Driver::news');
+    $routes->get('(:any)', 'Driver::profile/$1');
 });
 
 $routes->group("config", function ($routes) {
     $routes->get('/', 'Config::index');
-    $routes->get('news', 'Vehicle::news');
+    $routes->group("utilizador", function ($routes) {
+        $routes->get('/', 'Config::utilizador');
+        $routes->get('/(:any)', 'Config::utilizador/$1');
+    });
+    $routes->get('', 'Vehicle::news');
 });
 
 $routes->group("user", function ($routes) {

@@ -1,15 +1,13 @@
 <div class="page-content" id="main">
     <!--breadcrumb-->
-    <input type="hidden" value="<?= @$id ?>" id="main_id">
-    <input type="hidden" value="<?= @$apt ?>" id="apt">
     <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-1 fw-bold pb-3" style="background-color:#F5F5DC;">
-        <div class="breadcrumb-title pe-3">Morador</div>
+        <div class="breadcrumb-title pe-3">Motoristas</div>
         <div class="ps-3">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb mb-0 p-0">
                     <li class="breadcrumb-item"><a href="/"><i class="bx bx-home-alt"></i></a>
                     </li>
-                    <li class="breadcrumb-item active" aria-current="page"><a href="/morador">Morador </a></li>
+                    <li class="breadcrumb-item active" aria-current="page"><a href="/morador">Motoristas </a></li>
                     <li class="breadcrumb-item active" aria-current="page">{{morador.nome}}</li>
                 </ol>
             </nav>

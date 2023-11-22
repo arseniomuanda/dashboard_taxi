@@ -1,0 +1,44 @@
+CRITICAL - 2023-11-06 17:36:05 --> Undefined variable $id
+in APPPATH\Views\vehicles\profile.php on line 918.
+ 1 APPPATH\Views\vehicles\profile.php(918): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $id', 'C:\\ARSENIO\\Sonia\\dashboard_taxi\\app\\Views\\vehicles\\profile.php', 918)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\ARSENIO\\Sonia\\dashboard_taxi\\app\\Views\\vehicles\\profile.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('vehicles/profile', [], true)
+ 5 APPPATH\Controllers\Config.php(16): view('vehicles/profile')
+ 6 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Config->utilizador()
+ 7 SYSTEMPATH\CodeIgniter.php(492): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Config))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\ARSENIO\\Sonia\\dashboard_taxi\\public\\index.php')
+CRITICAL - 2023-11-06 17:37:15 --> Undefined variable $id
+in APPPATH\Views\vehicles\profile.php on line 918.
+ 1 APPPATH\Views\vehicles\profile.php(918): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $id', 'C:\\ARSENIO\\Sonia\\dashboard_taxi\\app\\Views\\vehicles\\profile.php', 918)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\ARSENIO\\Sonia\\dashboard_taxi\\app\\Views\\vehicles\\profile.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('vehicles/profile', [], true)
+ 5 APPPATH\Controllers\Config.php(16): view('vehicles/profile')
+ 6 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Config->utilizador()
+ 7 SYSTEMPATH\CodeIgniter.php(492): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Config))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\ARSENIO\\Sonia\\dashboard_taxi\\public\\index.php')
+CRITICAL - 2023-11-06 22:54:06 --> Invalid file: "vehicles/profile.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('vehicles/profile.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('vehicles/profile', [], true)
+ 3 APPPATH\Controllers\Vehicle.php(24): view('vehicles/profile', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Vehicle->profile('000000000LA031')
+ 5 SYSTEMPATH\CodeIgniter.php(492): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Vehicle))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\ARSENIO\\Sonia\\dashboard_taxi\\public\\index.php')
+CRITICAL - 2023-11-06 23:00:27 --> Invalid file: "vehicles/profile.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('vehicles/profile.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('vehicles/profile', [], true)
+ 3 APPPATH\Controllers\Driver.php(24): view('vehicles/profile', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Driver->profile('000000000LA031')
+ 5 SYSTEMPATH\CodeIgniter.php(492): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Driver))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\ARSENIO\\Sonia\\dashboard_taxi\\public\\index.php')

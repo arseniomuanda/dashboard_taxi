@@ -11,8 +11,11 @@ class Config extends BaseController
         return view('template/header') . view('template/sider') . view('config/main') . view('config/options') . view('template/footer');
     }
 
-    public function profile($id = null)
+    public function utilizador($id = null)
     {
-        return view('template/header') . view('template/sider') . view('vehicles/profile') . view('template/footer');
+        if(is_null($id)){
+            return view('template/header') . view('template/sider') . view('config/user/list') . view('config/options') . view('template/footer');
+        }
+        return view('template/header') . view('template/sider') . view('config/main') . view('config/options') . view('template/footer');
     }
 }

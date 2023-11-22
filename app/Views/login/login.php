@@ -31,7 +31,7 @@
                 <div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3">
                     <div class="col mx-auto">
                         <div class="mb-4 text-center">
-                            <img src="assets/images/logo-img.png" width="180" alt="" />
+                            <img src="assets/images/logo-icon.png" width="180" alt="" />
                         </div>
                         <div class="card">
                             <div class="card-body">
@@ -43,16 +43,19 @@
                                         <hr />
                                     </div>
                                     <div class="form-body">
-                                        <form class="row g-3">
+                                        <form class="row g-3" onsubmit="event.preventDefault();login(this)">
                                             <div class="col-12">
-                                                <label for="inputEmailAddress" class="form-label">Email Address</label>
-                                                <input type="email" class="form-control" id="inputEmailAddress" placeholder="Email Address">
+                                                <label for="inputEmailAddress" class="form-label">Email BI</label>
+                                                <input type="text" name="bilhete_identidade" class="form-control" maxlength="14" value="005367905CA043" id="inputEmailAddress" placeholder="Email BI">
                                             </div>
                                             <div class="col-12">
                                                 <label for="inputChoosePassword" class="form-label">Enter
                                                     Password</label>
                                                 <div class="input-group" id="show_hide_password">
-                                                    <input type="password" class="form-control border-end-0" id="inputChoosePassword" value="12345678" placeholder="Enter Password"> <a href="javascript:;" class="input-group-text bg-transparent"><i class='bx bx-hide'></i></a>
+                                                    <input type="password" name="password" class="form-control border-end-0" id="inputChoosePassword" value="1234" placeholder="Enter Password">
+                                                    <a href="javascript:;" class="input-group-text bg-transparent">
+                                                        <i class='bx bx-hide'></i>
+                                                    </a>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
@@ -66,6 +69,11 @@
                                             <div class="col-12">
                                                 <div class="d-grid">
                                                     <button type="submit" class="btn btn-primary"><i class="bx bxs-lock-open"></i>Sign in</button>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-12">
+                                                <div id="sms">
                                                 </div>
                                             </div>
                                         </form>
@@ -88,7 +96,80 @@
     <script src="assets/plugins/metismenu/js/metisMenu.min.js"></script>
     <script src="assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
     <!--Password show & hide js -->
+    <script src="assets/js/consts.js"></script>
     <script>
+        if (sessionStorage.online) {
+            location.href = '/'
+        }
+
+        async function login(form) {
+
+            var object = {};
+            new FormData(form).forEach(function(value, key) {
+                object[key] = value;
+            });
+            var json = JSON.stringify(object);
+
+            const options = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'User-Agent': 'insomnia/2023.5.8'
+                },
+                body: json
+            };
+
+            await fetch(endpoins.api + endpoins.login, options)
+                .then(response => response.json())
+                .then(response => {
+                    try {
+                        var base64Url = response.token.split('.')[1];
+                        var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+                        var jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function(c) {
+                            return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+                        }).join(''));
+
+                        let user = JSON.parse(jsonPayload);
+
+                        if (user.token != "undefined") {
+                            setUser(user, response.token);
+                            location.reload();
+                        }
+
+                        console.log(response)
+                    } catch (error) {
+                        document.getElementById('sms').innerHTML = `
+                            <div class="d-grid">
+                                 <h2 class="btn btn-lg w-10 bg-gradient-bloody text-dark">${response.message}</h2>
+                            </div>
+                        `
+                        console.log(response.message)
+                    }
+
+
+                })
+                .catch(err => {
+                    console.log(err.message)
+                });
+        }
+
+        function setUser(user, token) {
+            sessionStorage.setItem('id', user.id)
+            sessionStorage.setItem('token', token)
+            sessionStorage.setItem('bilhete_identidade', user.bilhete_identidade)
+            sessionStorage.setItem('name', user.name)
+            sessionStorage.setItem('telefone', user.telefone)
+            sessionStorage.setItem('email', user.email)
+            sessionStorage.setItem('nick_name', user.nick_name)
+            sessionStorage.setItem('address', user.address)
+            sessionStorage.setItem('role', user.role)
+            sessionStorage.setItem('is_banned', user.is_banned)
+            sessionStorage.setItem('created_at', user.created_at)
+            sessionStorage.setItem('updated_at', user.updated_at)
+            sessionStorage.setItem('is_driver', user.is_driver)
+            sessionStorage.setItem('online', user.online)
+        }
+
         $(document).ready(function() {
             $("#show_hide_password a").on('click', function(event) {
                 event.preventDefault();
@@ -103,13 +184,8 @@
                 }
             });
         });
-
-        function login(){
-            fetch('logar/dsfkjhkdsfd', )
-        }
     </script>
     <!--app JS-->
-    <script src="assets/js/app.js"></script>
 </body>
 
 </html>
