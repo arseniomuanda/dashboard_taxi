@@ -26,7 +26,8 @@
 						<div class="menu-title">Menu Principal</div>
 					</a>
 					<ul style="background-color: #d8d7adee;">
-						<li> <a href="/drivers"><i class="bx bx-building-house"></i>Novos Motoriastas</a></li>
+						<li> <a href="/drivers/show/all"><i class="bx bx-building-house"></i>Todos Motoriastas</a></li>
+						<li> <a href="/drivers/show/unapproved"><i class="bx bx-building-house"></i>Motoriastas Não aprovados</a></li>
 						<li> <a href="/vehicles/news"><i class="bx bxs-user-plus"></i>Novas Viaturas</a>
 						</li>
 						<li>

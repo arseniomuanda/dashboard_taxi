@@ -25,16 +25,16 @@
     <div class="d-grid gap-2 mb-2 card p-2 fw-bold" style="background-color:#F5F5DC;">
         <div class="portlet-title bg-grey-salt bg-font-grey mb-0 text-uppercase text-center">
             <div class="caption">
-                <span class="text-danger m-1">0</span>Configurações
+                Configurações
             </div>
         </div>
         <div style="font-size: 15px" class="portlet-body">
             <a href="/config/acesso" class="">
-                <span class="text-danger m-1">0.10</span>Acessos
+                Acessos
             </a>
             <hr style=" margin-top: 8px; margin-bottom: 8px; ">
             <a href="/config/utilizador" class="">
-                <span class="text-danger m-1">0.11</span>Utilizadores
+                Utilizadores
             </a>
         </div>
     </div>

@@ -39,13 +39,13 @@
                                     <div class="text-center">
                                         <h3 class="">Sign in</h3>
                                     </div>
-                                    <div class="login-separater text-center mb-4"> <span>OR SIGN IN WITH EMAIL</span>
+                                    <div class="login-separater text-center mb-4"> <span>Login Com BI</span>
                                         <hr />
                                     </div>
                                     <div class="form-body">
                                         <form class="row g-3" onsubmit="event.preventDefault();login(this)">
                                             <div class="col-12">
-                                                <label for="inputEmailAddress" class="form-label">Email BI</label>
+                                                <label for="inputEmailAddress" class="form-label">BI</label>
                                                 <input type="text" name="bilhete_identidade" class="form-control" maxlength="14" value="005367905CA043" id="inputEmailAddress" placeholder="Email BI">
                                             </div>
                                             <div class="col-12">

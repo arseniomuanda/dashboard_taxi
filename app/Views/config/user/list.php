@@ -14,8 +14,12 @@
                         <div class="col-md-12">
                             <div class="input-group mb-1"> <span class="fw-bold input-group-text fw-bold" id="basic-addon1">Nome<span class="fw-bold text-danger">*</span></span>
                                 <input type="text" class="form-control" required="" aria-label="name" name="name">
-                                <input type="hidden" class="form-control" required="" aria-label="name" value="1234" name="password">
-                                <input type="hidden" class="form-control" required="" aria-label="name" value="teste" name="nick_name">
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="input-group mb-1"> <span class="fw-bold input-group-text fw-bold" id="basic-addon1">Apelido<span class="fw-bold text-danger">*</span></span>
+                                <input type="text" class="form-control" required="" aria-label="nick_name" name="nick_name">
                             </div>
                         </div>
 
@@ -40,6 +44,12 @@
                         <div class="col-md-12">
                             <div class="input-group mb-1"> <span class="fw-bold input-group-text fw-bold" id="basic-addon1">Endereço<span class="fw-bold text-danger">*</span></span>
                                 <input class="form-control nome" name="address" required="" aria-label="address" aria-describedby="basic-addon1">
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="input-group mb-1"> <span class="fw-bold input-group-text fw-bold" id="basic-addon1">Password<span class="fw-bold text-danger">*</span></span>
+                                <input class="form-control nome" name="password" required="" disabled readonly aria-label="address" value="123456" aria-describedby="basic-addon1">
                             </div>
                         </div>
 

@@ -47,8 +47,9 @@
                                         </td>
                                         <td>{{item.user.name}}</td>
                                         <td>{{item.user.bilhete_identidade}}</td>
-                                        <td>999999999</td><td>{{item.user.email}}</td>
-                                        
+                                        <td>999999999</td>
+                                        <td>{{item.user.email}}</td>
+
                                     </tr>
                                 </tbody>
                             </table>
@@ -89,11 +90,13 @@
                     }
                 };
 
-                await fetch(endpoins.api + endpoins.newdrivers, options)
+                // Exemplo de uso:
+                let list = '<?= $show ?>' == 'all' ? endpoins.allDrivers : endpoins.unappprevedDrivers;
+
+                await fetch(endpoins.api + list, options)
                     .then(response => response.json())
                     .then(response => {
                         try {
-                            const tableBody = document.getElementById("unapproveddivres");
                             this.drivers = response.drivers;
                             console.log(response);
                         } catch (error) {

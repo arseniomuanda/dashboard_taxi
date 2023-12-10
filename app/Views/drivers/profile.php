@@ -39,6 +39,10 @@
                             <button class="nav-link fw-bold" data-bs-toggle="tab" data-bs-target="#profile-propretario">Histórico de Proprietários</button>
                         </li>
 
+                        <li class="nav-item">
+                            <button class="nav-link fw-bold" data-bs-toggle="tab" data-bs-target="#profile-opcoes">Opcões</button>
+                        </li>
+
                     </ul>
                     <div class="tab-content pt-2">
                         <div class="tab-pane fade profile-overview active show" id="profile-overview">
@@ -263,7 +267,8 @@
                                                             <input type="text" class="form-control " aria-label="tel" name="anexo_bi_propietario_antigo">
                                                         </div>
                                                     </div>
-                                                    <div class="row mb-3 col-md-12">
+
+                                                    <div class="row m-3 col-md-12">
                                                         <div class="col-md-7"></div>
                                                         <div class="col-md-2">
                                                             <button type="submit" class="btn btn-success btn-md w-100 btn-save"><i class="bx bx-save mr-1"></i>Salvar</button>
@@ -285,7 +290,7 @@
                                         <div class="card-title d-flex align-items-center">
                                             <div><i class="bx bxs-user me-1 font-22 text-danger"></i>
                                             </div>
-                                            <h5 class="mb-0 text-white fw-bold">Adicionar Novo Proprietario</h5>
+                                            <h5 class="mb-0 text-white fw-bold">Adicionar Nova Viatura</h5>
                                         </div>
                                         <hr>
                                         <form action="/api/admin/proprietarioterreno" class="row" method="POST" onsubmit="event.preventDefault();functions.add(this)" autocomplete="off" autocapitalize="on">
@@ -408,7 +413,6 @@
                                         <!--  -->
                                         <a type="button" class="btn btn-dark btn-save position-relative" data-bs-toggle="modal" data-bs-target="#requirimento_doc">
                                             Requerimento
-
                                             <span class="position-absolute top-0 start-100 translate-middle p-1 bg-warning rounded-circle">
                                                 <span class="visually-hidden">.</span>
                                             </span>
@@ -620,259 +624,20 @@
 
                         <div class="tab-pane fade show profile-overview" id="profile-propretario">
 
-                            <div class="row">
-                                <div class="card" style="background-color: #777777;">
-                                    <div class=" card-body">
-                                        <div class="card-title d-flex align-items-center">
-                                            <div><i class="bx bxs-user me-1 font-22 text-danger"></i>
-                                            </div>
-                                            <h5 class="mb-0 text-white fw-bold"> Lista de Proprietários</h5>
-                                        </div>
-                                        <hr>
-                                        <div class="row">
-                                            <form action="/api/admin/proprietarioterreno/4" class="row" method="POST" onsubmit="event.preventDefault();functions.add(this)" autocomplete="off" autocapitalize="on">
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <div class="input-group mb-1"> <span class="fw-bold input-group-text fw-bold nome" id="basic-addon1">BI<span class="fw-bold text-danger">*</span></span>
-                                                            <input type="text" class="form-control" required="" aria-label="tel" value="394858w" name="bi_proprietario_actual">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <div class="input-group mb-1"> <span class="fw-bold input-group-text" id="basic-addon1">Província<span class="fw-bold text-danger">*</span></span>
-                                                            <select type="text" class="form-select" placeholder="" aria-label="tel" name="provincia1">
-                                                                <option>Selecionar Proprietário</option>
-                                                                <option value="1">Arsénio Muanda</option>
-                                                                <option value="2">Arsenio Vicente</option>
-                                                                <option value="3">Teresa Iracelma</option>
-                                                                <option value="4">Alexandre Dalas</option>
-                                                                <option value="5">Fatima Teixeira</option>
-                                                                <option value="6">Firmino Lucamba</option>
-                                                                <option value="7">Paulo Jose</option>
-                                                                <option value="8">Viegas António</option>
-                                                                <option value="9">João de Deus</option>
-                                                                <option value="10">TONY</option>
-                                                                <option value="11">Santos da Silva</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
+                        </div>
 
-                                                    <div class="col-md-2">
-                                                        <p class="mb-1">
-                                                            <a class="btn position-relative" style="background-color: black; color:aliceblue" data-bs-toggle="modal" data-bs-target="#anexo_bi_propietario_antigo4">Ver Anexo
-                                                                <span class="position-absolute top-0 start-100 translate-middle p-1 bg-warning rounded-circle">
-                                                                    <span class="visually-hidden">.</span>
-                                                                </span>
-                                                            </a>
-                                                        </p>
-                                                        <div class="modal fade" id="anexo_bi_propietario_antigo4" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="anexo_bi_propietario_antigoLabel" aria-hidden="true">
-                                                            <div class="modal-dialog modal-fullscreen" role="document">
-                                                                <div class="modal-content">
-                                                                    <div class="modal-header">
-                                                                        <h1 class="modal-title fs-5" id="anexo_bi_propietario_antigoLabel">BI</h1>
-                                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                                    </div>
-                                                                    <div class="modal-body">
-                                                                        <object data="http://localhost:8080//file/proprietarioterrenos/4.jpg" type="application/pdf" width="100%" height="1000px"></object>
-                                                                    </div>
-                                                                    <div class="modal-footer">
-                                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-md-6">
-                                                        <div class="input-group mb-1"> <span class="fw-bold input-group-text fw-bold nome" id="basic-addon1">Nome Completo<span class="fw-bold text-danger">*</span></span>
-                                                            <input type="text" class="form-control" required="" aria-label="tel" name="nome_proprietario_actual" value="Teste 2">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="input-group mb-1"> <span class="fw-bold input-group-text fw-bold" id="basic-addon1">NIF<span class="fw-bold text-danger">*</span></span>
-                                                            <input type="text" class="form-control" required="" aria-label="tel" name="nif_proprietario_actual" value="03985093">
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-md-6">
-                                                        <div class="input-group mb-1"> <span class="fw-bold input-group-text fw-bold" id="basic-addon1">Telefone<span class="fw-bold text-danger">*</span></span>
-                                                            <input type="text" class="form-control" required="" aria-label="tel" name="telefone_proprietario_actual" value="9487343874">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="input-group mb-1"> <span class="fw-bold input-group-text fw-bold" id="basic-addon1">Anexar BI</span>
-                                                            <input type="text" class="form-control " aria-label="tel" name="anexo_bi_propietario_antigo">
-                                                        </div>
-                                                    </div>
-                                                    <div class="row mb-3 col-md-12">
-                                                        <div class="col-md-7"></div>
-                                                        <div class="col-md-2">
-                                                            <button type="submit" class="btn btn-success btn-md w-100 btn-save"><i class="bx bx-save mr-1"></i>Salvar</button>
-                                                        </div>
-                                                        <div class="col-md-2">
-                                                            <button type="button" onclick="functions.deleteProprietarioTerreno('/api/admin/delete/proprietarioterreno/4','Teste 2','Terreno de Teste', '9487343874', '394858w')" class="btn btn-danger btn-md w-100 btn-save"><i class="bx bxs-trash mr-1"></i>Eliminar</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                            <form action="/api/admin/proprietarioterreno/5" class="row" method="POST" onsubmit="event.preventDefault();functions.add(this)" autocomplete="off" autocapitalize="on">
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <div class="input-group mb-1"> <span class="fw-bold input-group-text fw-bold nome" id="basic-addon1">BI<span class="fw-bold text-danger">*</span></span>
-                                                            <input type="text" class="form-control" required="" aria-label="tel" value="3455434434" name="bi_proprietario_actual">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <div class="input-group mb-1"> <span class="fw-bold input-group-text" id="basic-addon1">Província<span class="fw-bold text-danger">*</span></span>
-                                                            <select type="text" class="form-select" placeholder="" aria-label="tel" name="provincia1">
-                                                                <option>Selecionar Proprietário</option>
-                                                                <option value="1">Arsénio Muanda</option>
-                                                                <option value="2">Arsenio Vicente</option>
-                                                                <option value="3">Teresa Iracelma</option>
-                                                                <option value="4">Alexandre Dalas</option>
-                                                                <option value="5">Fatima Teixeira</option>
-                                                                <option value="6">Firmino Lucamba</option>
-                                                                <option value="7">Paulo Jose</option>
-                                                                <option value="8">Viegas António</option>
-                                                                <option value="9">João de Deus</option>
-                                                                <option value="10">TONY</option>
-                                                                <option value="11">Santos da Silva</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-md-2">
-                                                        <p class="mb-1">
-                                                            <a class="btn position-relative" style="background-color: black; color:aliceblue" data-bs-toggle="modal" data-bs-target="#anexo_bi_propietario_antigo5">Ver Anexo
-                                                                <span class="position-absolute top-0 start-100 translate-middle p-1 bg-warning rounded-circle">
-                                                                    <span class="visually-hidden">.</span>
-                                                                </span>
-                                                            </a>
-                                                        </p>
-                                                        <div class="modal fade" id="anexo_bi_propietario_antigo5" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="anexo_bi_propietario_antigoLabel" aria-hidden="true">
-                                                            <div class="modal-dialog modal-fullscreen" role="document">
-                                                                <div class="modal-content">
-                                                                    <div class="modal-header">
-                                                                        <h1 class="modal-title fs-5" id="anexo_bi_propietario_antigoLabel">BI</h1>
-                                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                                    </div>
-                                                                    <div class="modal-body">
-                                                                        <object data="http://localhost:8080//file/proprietarioterrenos/5.png" type="application/pdf" width="100%" height="1000px"></object>
-                                                                    </div>
-                                                                    <div class="modal-footer">
-                                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-md-6">
-                                                        <div class="input-group mb-1"> <span class="fw-bold input-group-text fw-bold nome" id="basic-addon1">Nome Completo<span class="fw-bold text-danger">*</span></span>
-                                                            <input type="text" class="form-control" required="" aria-label="tel" name="nome_proprietario_actual" value="wewe">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="input-group mb-1"> <span class="fw-bold input-group-text fw-bold" id="basic-addon1">NIF<span class="fw-bold text-danger">*</span></span>
-                                                            <input type="text" class="form-control" required="" aria-label="tel" name="nif_proprietario_actual" value="45343">
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-md-6">
-                                                        <div class="input-group mb-1"> <span class="fw-bold input-group-text fw-bold" id="basic-addon1">Telefone<span class="fw-bold text-danger">*</span></span>
-                                                            <input type="text" class="form-control" required="" aria-label="tel" name="telefone_proprietario_actual" value="+244990302023">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="input-group mb-1"> <span class="fw-bold input-group-text fw-bold" id="basic-addon1">Anexar BI</span>
-                                                            <input type="text" class="form-control " aria-label="tel" name="anexo_bi_propietario_antigo">
-                                                        </div>
-                                                    </div>
-                                                    <div class="row mb-3 col-md-12">
-                                                        <div class="col-md-7"></div>
-                                                        <div class="col-md-2">
-                                                            <button type="submit" class="btn btn-success btn-md w-100 btn-save"><i class="bx bx-save mr-1"></i>Salvar</button>
-                                                        </div>
-                                                        <div class="col-md-2">
-                                                            <button type="button" onclick="functions.deleteProprietarioTerreno('/api/admin/delete/proprietarioterreno/5','wewe','Terreno de Teste', '+244990302023', '3455434434')" class="btn btn-danger btn-md w-100 btn-save"><i class="bx bxs-trash mr-1"></i>Eliminar</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="tab-pane fade show profile-overview" id="profile-opcoes">
 
                             <div class="row">
-                                <div class="card" style="background-color: #777777;">
-                                    <div class="card-body">
-                                        <div class="card-title d-flex align-items-center">
-                                            <div><i class="bx bxs-user me-1 font-22 text-danger"></i>
-                                            </div>
-                                            <h5 class="mb-0 text-white fw-bold">Adicionar Novo Proprietario</h5>
-                                        </div>
-                                        <hr>
-                                        <form action="/api/admin/proprietarioterreno" class="row" method="POST" onsubmit="event.preventDefault();functions.add(this)" autocomplete="off" autocapitalize="on">
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="input-group mb-1"> <span class="fw-bold input-group-text fw-bold" id="basic-addon1">BI<span class="fw-bold text-danger">*</span></span>
-                                                        <input type="hidden" name="terreno" value="16">
-                                                        <input type="text" class="form-control nome" required="" aria-label="tel" name="bi_proprietario_actual">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <div class="input-group mb-1"> <span class="fw-bold input-group-text" id="basic-addon1">Província<span class="fw-bold text-danger">*</span></span>
-                                                        <select type="text" class="form-select" placeholder="" aria-label="tel" name="provincia1" id="cidadaoList">
-                                                            <option>Selecionar Proprietário</option>
-                                                            <option value="1">Arsénio Muanda</option>
-                                                            <option value="2">Arsenio Vicente</option>
-                                                            <option value="3">Teresa Iracelma</option>
-                                                            <option value="4">Alexandre Dalas</option>
-                                                            <option value="5">Fatima Teixeira</option>
-                                                            <option value="6">Firmino Lucamba</option>
-                                                            <option value="7">Paulo Jose</option>
-                                                            <option value="8">Viegas António</option>
-                                                            <option value="9">João de Deus</option>
-                                                            <option value="10">TONY</option>
-                                                            <option value="11">Santos da Silva</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-md-6">
-                                                    <div class="input-group mb-1"> <span class="fw-bold input-group-text fw-bold" id="basic-addon1">Nome Completo<span class="fw-bold text-danger">*</span></span>
-                                                        <input type="text" class="form-control nome" required="" aria-label="tel" name="nome_proprietario_actual">
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-md-6">
-                                                    <div class="input-group mb-1"> <span class="fw-bold input-group-text fw-bold" id="basic-addon1">NIF<span class="fw-bold text-danger">*</span></span>
-                                                        <input type="text" class="form-control" required="" aria-label="tel" name="nif_proprietario_actual">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="input-group mb-1"> <span class="fw-bold input-group-text fw-bold" id="basic-addon1">Telefone<span class="fw-bold text-danger">*</span></span>
-                                                        <input type="text" class="form-control" required="" aria-label="tel" name="telefone_proprietario_actual">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="input-group mb-1"> <span class="fw-bold input-group-text fw-bold" id="basic-addon1">Anexar BI</span>
-                                                        <input type="file" class="form-control" aria-label="tel" name="anexo_bi_propietario_antigo">
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-12">
-                                                <div class="position-relative m-4">
-                                                    <div class="position-absolute bottom-0 end-0">
-                                                        <button type="submit" class="btn btn-primary px-5 lg  btn-save">Salvar</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
+                                <div v-if="driver.is_banned" class="col-md-6">
+                                    <button class="btn btn-success">Aprovar Motorista</button>
                                 </div>
+                                <div v-else class="col-md-6">
+                                    <button class="btn btn-danger">Bannir Motorista</button>
+                                </div>
+
                             </div>
+
                         </div>
 
                     </div><!-- End Bordered Tabs -->
@@ -908,6 +673,30 @@
                         try {
                             this.driver = response;
                             console.log(response);
+                        } catch (error) {
+                            driver: {}
+                        }
+                    })
+                    .catch(err => console.error(err));
+            },
+
+            approveDriver: async function() {
+                const options = {
+                    method: 'GET',
+                    headers: {
+                        /* 'User-Agent': 'insomnia/2023.5.8', */
+                        Authorization: 'Bearer ' + sessionStorage.token
+                    }
+                };
+
+                await fetch(endpoins.api + '/admin/drivers/approve/<?= $id ?>', options)
+                    .then(response => response.json())
+                    .then(response => {
+                        try {
+                            console.log(response);
+                            setTimeout(() => {
+                                location.reload();
+                            }, 3000);
                         } catch (error) {
                             driver: {}
                         }

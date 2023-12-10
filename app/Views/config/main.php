@@ -3,7 +3,7 @@
         <!--breadcrumb-->
         <input type="hidden" id="main_id" :value="id">
         <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-1 fw-bold pb-3" style="background-color:#F5F5DC;">
-            <div class="breadcrumb-title pe-3"><span class="text-danger m-1">0</span>Configurações</div>
+            <div class="breadcrumb-title pe-3">Configurações</div>
             <div class="ps-3">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb mb-0 p-0">

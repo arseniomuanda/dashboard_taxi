@@ -18,4 +18,12 @@ class Config extends BaseController
         }
         return view('template/header') . view('template/sider') . view('config/main') . view('config/options') . view('template/footer');
     }
+
+    public function acesso($id = null)
+    {
+        if (is_null($id)) {
+            return view('template/header') . view('template/sider') . view('config/acesso/list') . view('config/options') . view('template/footer');
+        }
+        return view('template/header') . view('template/sider') . view('config/main') . view('config/options') . view('template/footer');
+    }
 }

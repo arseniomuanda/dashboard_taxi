@@ -6,9 +6,10 @@ use App\Controllers\BaseController;
 
 class Driver extends BaseController
 {
-    public function index()
+    public function index($show = null)
     {
-        return view('template/header') . view('template/sider') . view('drivers/main') . view('template/footer');
+        $data = ['show' => $show];
+        return view('template/header') . view('template/sider') . view('drivers/main', $data) . view('template/footer');
     }
 
     public function news()

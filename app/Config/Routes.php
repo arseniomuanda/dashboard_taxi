@@ -11,6 +11,7 @@ $routes->get('login', 'Login::index');
 
 $routes->group("drivers", function ($routes) {
     $routes->get('/', 'Driver::index');
+    $routes->get('show/(:any)', 'Driver::index/$1');
     $routes->get('news', 'Driver::news');
     $routes->get('(:any)', 'Driver::profile/$1');
 });
