@@ -9,8 +9,9 @@ const endpoins = new Object({
     api: 'https://bazza-service.onrender.com',
     login: '/auth/login',
     unappprevedDrivers: '/admin/drivers/unapproved',
-    allDrivers: '/drivers/',
-    users: '/user/'
+    allDrivers: '/driver',
+    users: '/user/',
+    driverProfile: '/driver/profile/'
 })
 
 

@@ -11,7 +11,7 @@
                     <ol class="breadcrumb mb-0 p-0">
                         <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
                         </li>
-                        <li class="breadcrumb-item active" aria-current="page">Motoristas Não Aprovados</li>
+                        <li class="breadcrumb-item active" aria-current="page"><?= $show == 'all' ? 'Todos os motoristas' : 'Motoristas não aprovados' ?></li>
                     </ol>
                 </nav>
             </div>
@@ -97,7 +97,11 @@
                     .then(response => response.json())
                     .then(response => {
                         try {
-                            this.drivers = response.drivers;
+                            if ('<?= $show ?>' == 'all') {
+                                this.drivers = response;
+                            } else {
+                                this.drivers = response.drivers;
+                            }
                             console.log(response);
                         } catch (error) {
                             drivers: []
